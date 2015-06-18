@@ -1,0 +1,9 @@
+{
+  "name": "the_blank_app",
+  "title": "The Blank App Firefox Plugin",
+  "id": "jid1-bbHjH5LAQBHX1A",
+  "description": "This is an extension to report visually inaccesible websites",
+  "author": "Jared Siirila",
+  "license": "MPL 2.0",
+  "version": "0.1"
+}
