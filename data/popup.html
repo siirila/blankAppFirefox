@@ -1,0 +1,85 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html ng-app="app" style="width:500px; height:160px;">
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+        /*background-color: black important!;*/
+        transition: all 0.3s ease 0s;
+      }
+
+      .black {
+        background-color: black: important!;
+        border: 10px solid black;
+      }
+
+      .yellow {
+        background-color: yellow: important!;
+        border: 10px solid yellow;
+      }
+
+      .hide {
+        display: none;
+      }
+
+      .show {
+        display: inline;
+      }
+
+      #status {
+        /* avoid an excessively wide status text */
+        white-space: pre;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        /*max-width: 400px;*/
+      }
+
+      textarea {
+        border: none;
+        overflow: auto;
+        outline: none;
+
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        font-size: 20pt;
+        font-family: Arial;
+      }
+    </style>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/custom.css" rel="stylesheet" media="screen">
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+    <script src="popup.js"></script>
+  </head>
+  <body ng-controller="mainCtrl" id="body" class="black" style="height: 160px;">
+  <div id="submission">
+    <h4 class="text-center">Enter the issue you are having</h4>
+    <textarea id="message" ng-enter="console.log(23);" ng-model="message" style="height: 100px; width: 100%; font-size: 16pt; font-family: Arial; padding: 10px; border: none;"></textarea>
+  </div>
+  <div id="success" style="display: none;" class="text-center">
+    <center>
+    <div class="row"><h4>Thanks! Your Comment was Received</h4></div>
+    <div class="row"><img src="success.png" height="100px;"></img></div>
+  </center>
+  </div>
+    <!--
+    <div id="status"></div>
+    <img id="image-result" hidden>-->
+  </body>
+</html>
+
